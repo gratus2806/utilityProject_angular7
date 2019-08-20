@@ -1,0 +1,132 @@
+
+<div >
+  <app-enersysheader></app-enersysheader>
+  <app-enersynavebar></app-enersynavebar>
+</div>
+<div class="container" style="padding-top:30px;margin-top: 45px;margin-left: 30px;">
+    <div class="row">
+        <div class="col-lg-3 ">
+            <h2 class="section_heading">New Enrollment</h2>
+            <div class="nav_set">
+                <app-enersys-sidebar></app-enersys-sidebar>
+            </div>
+            
+        </div>
+        <div class ="col-lg-9">
+            <div class="row">
+                <div class="col-lg-6" style="padding-top: 81px;padding-left: 122px;">
+                    <img class="energbill_snapshot" src="https://webvictory.in/img/EnergyBillSnapShot_enersys.png">
+                </div>
+                <div class="col-lg-6">
+                    <div>
+                            <div #referenceKeyName  id="chart0"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-bordered search-box">
+                        
+                            <div class="col-2 pull-l enroll-search-title">
+                                <label class="request-type-label request-type-title">Search plans:</label>
+                            </div>
+                            <div class="col-10 pull-l" style="width:19%; margin-left: 10px;">
+                                <form [formGroup]="SearchForm" (ngSubmit)="onSubmitSearchForm()">
+                                    <div class="form-group">
+                                        <div class="input-group" style="margin-left: 0px;bottom: 3px;">
+                                            <input type="text" class="col-3 form-control input_box" formControlName="RatePlanSearchRequest" id="RatePlanSearchRequest" >
+                                            
+                                            <select   class="col-3 form-control input_box  " name="Utility_lists" formControlName="Utility_lists" style="    height: 33px;">
+                                                <!-- <option value="selected"  selected="selected">select</option>  -->
+                                                <option *ngFor="let Utility_lists of Utility_listArray" [ngValue]="Utility_lists.Utility_list">
+                                                    {{ Utility_lists.Utility_list}}
+                                                  </option>
+                                            </select>
+                                            
+                                            <select class="col-3 form-control input_box  " formControlName="CommodityLists" style="    height: 33px;">
+                                               <!-- <option value="selected"  selected="selected">select</option> -->
+                                                <option *ngFor="let CommodityLists of CommodityListArray" [ngValue]="CommodityLists.CommodityList">
+                                                    {{ CommodityLists.CommodityList}}
+                                                  </option>
+                                            </select>
+                                            
+                                            <select class="col-3 form-control input_box  " formControlName="AccountTypeLists" style="    height: 33px;">
+                                                <!-- <option value="selected"  selected="selected">select</option> -->
+                                                <option *ngFor="let AccountTypeLists of AccountTypeListArray" [ngValue]="AccountTypeLists.AccountTypeList">
+                                                    {{ AccountTypeLists.AccountTypeList}}
+                                                  </option>
+                                            </select>
+                                            
+                                            <span class="input-group-btn">
+                                                    
+                                                <button class="btn btn-default" style="color: black; background-color: #6cbbd1;border-radius: 17px;width: 85px;">Search</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h4   style="margin-left: 683px;"  >Promo Code + Filters</h4>
+            </div>
+            <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-bordered search-box" style="margin-top: 8px;">
+                            
+                                <div class="col-2 pull-l enroll-search-title">
+                                    <label class="request-type-label request-type-title">Filters:</label>
+                                </div>
+                                <div class="col-10 pull-l" style="width:19%; margin-left: 10px;">
+                                    <form [formGroup]="SearchForm" (ngSubmit)=" onSubmitFilterForm()">
+                                        <div class="form-group">
+                                            <div class="input-group" style="margin-left: 0px;bottom: 3px;">
+                                                <select class="col-3 form-control input_box  " formControlName="RateTerms" style="height: 33px;">
+                                                    <option value=""  selected="selected">select</option>
+                                                    <option value="1">1 Month</option>
+                                                    <option value="2">2 Months</option>
+                                                    <option value="3">3 Months</option>
+                                                    <option value="4">4 Months</option>
+                                                    <option value="5">5 Months</option>
+                                                    <option value="6">6 Months</option>
+                                                </select>
+                                                
+                                                <select class="col-3 form-control input_box  " formControlName="RateType" style="height: 33px;">
+                                                    <option value=""  selected="selected">select</option>
+                                                    <option value="Fixed">Fixed</option>
+                                                    <option value="Complex">Complex</option>
+                                                    <option value="Variable">Variable</option>
+                                                    <option value="Hybrid">Hybrid</option>
+                                                    <option value="Index">Index</option>
+                                                    
+                                                </select>
+                                                
+                                                <div class="col-2 pull-l enroll-search-title">
+                                                    <label class="request-type-label request-type-title">Promo:</label>
+                                                </div>
+                                                
+                                                <input type="text" class="col-3 form-control input_box" style="padding-top: 6px;" formControlName="promo" id="promo" >
+                                                <span class="input-group-btn">
+                                                    <a class="btn btn-default " (click)='onCancel()' style="border-radius: 17px;width: 85px;margin-right: 12px;color: #7f7f7f; background-color: #fefcfc;border: 1.5px solid #bfbfbf;">Cancel</a>
+                                                    <button class="btn btn-default" style="color: black; background-color: #6cbbd1;border-radius: 17px;width: 85px;">Search</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            
+                        </div>
+                    </div>
+            </div>
+            <div class="row" *ngIf="isPlanAvailable">
+                <div class ="col-lg-12">
+                    <div class="col-md-3 plans-margin width-23" style="margin-right: 70px;" *ngFor="let plans_lists of plans_listArray">
+                        <app-plans-panel [planData]="plans_lists" ></app-plans-panel>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

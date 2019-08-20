@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RSS FEEDS</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://webvictory.in/img/dist/css/bootstrap-submenu.css">
+  <script src="https://webvictory.in/img/dist/js/bootstrap-submenu.js" defer></script> -->
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700|Open+Sans");
+.carousel-control-prev-icon {
+        display: none !important;
+    }
+    .carousel-control-next-icon  {
+        display: none !important;
+    }
+    .carousel-indicators .active {
+      display: none !important;
+    }
+    .carousel-indicators li {
+      display: none !important;
+    }
+.dropdown-submenu {
+  position: relative;
+}
+
+
+
+</style>
+</head>
+<body>
+  <app-root></app-root>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });
+  </script>
+  
+</body>
+</html>

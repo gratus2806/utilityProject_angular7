@@ -1,0 +1,44 @@
+ .layout.navbar.navbar-inverse {
+    z-index: 5;
+}
+.body-content {
+    padding: 0 25px;
+}
+ .mobile-logo {
+    display: none;
+} 
+ @media (min-width: 768px){
+    .navbar {
+        border-radius: 4px;
+        height: 0px;
+    }
+}
+.navbar {
+    min-height: 45px;
+}
+.home-menu {
+    height: 32px;
+    margin-top: 9px;
+    margin-left: 50px;
+ }
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 3.5rem;
+        padding-left: .5rem;
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+.support-icon, .alert-icon {
+     
+     height: 14px;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #16181b;
+    text-decoration: none;
+
+    background-color: #c7cbce;
+}
+ .dropdown:hover .dropdown-menu {display: block;}  
+
+

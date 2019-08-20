@@ -1,0 +1,79 @@
+@media screen and (min-width: 1366px){
+
+    .plans-margin {
+        margin: 20px 10px 0 9px;
+        width: 23%;
+    }
+}
+.plans-margin {
+    margin: 20px 8px 0 9px;
+    width: 23%;
+}
+.width-23 {
+    width: 23%;
+}
+.custom-border {
+    border: 1px solid #bfbfbf;
+    border-radius: 0 50px 0 50px;
+    height: 537px;
+    width: 229px;
+}
+.no-bold, .no-bold:active, .no-bold:visited, .no-bold:focus {
+    text-decoration: none;
+}
+/* a {
+    color: #6CBBD1;
+    text-decoration: none;
+} */
+.form-group {
+    margin-bottom: 4px;
+}
+@media (min-width: 992px){
+
+    .col-md-12 {
+        width: 100%;
+    }
+}
+@media (min-width: 951px){
+
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+.rate-plan-header {
+    color: #6cbbd1;
+    font-weight: bold;
+    font-family: heebo;
+    font-size: 24px;
+}
+.rate-plan-unit {
+    font-family: 'EXO 2';
+    font-size: 50px;
+    color: #17375e;
+    margin-top: 10px;
+}
+.rate-plan-units {
+    font-family: heebo;
+    font-size: 20px;
+    color: #636363;
+}
+.padding-top-bottom {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.rate-plan-power {
+    font-family: heebo;
+    font-size: 12px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+.rate-plan-background {
+    height: 293px;
+    background-color: #f2f2f2;
+    padding: 5%;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-top: 190px;
+    border-bottom-left-radius: 42px;
+}

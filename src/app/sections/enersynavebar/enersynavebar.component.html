@@ -1,0 +1,82 @@
+<div class="col-lg-12" style="padding-left: 0px;padding-right: 0px;">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <div class="container-fluid px-0">
+        <div class="row w-100">
+          <div class="col-2">
+              <a class="dash-circle" routerLink="/home"><img src="https://webvictory.in/img/home_enersys.png" title="Dashboard" class="home-menu"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" (click)="isShown = !isShown" >
+                
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+    
+          <div class="col-10">
+            <div class="collapse justify-content-end navbar-collapse" [ngClass]="{ 'show': isShown }" id="navbarTogglerDemo03" style="padding-left: 755px;">
+              <!-- <ul class="navbar-nav mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link " routerLink="/home" (click)="isShown = false" >Accounts</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Enrollment</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="/newenrollement">New Enrollment</a>
+                    <a class="dropdown-item" routerLink="/home">Mass Enrollment</a>
+                    <a class="dropdown-item" routerLink="/home">Search Enrollment</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Change/Drop</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="/home">Change Request</a>
+                    <a class="dropdown-item" routerLink="/home">Change Rate</a>
+                    <a class="dropdown-item" routerLink="/home">Change List</a>
+                    <a class="dropdown-item" routerLink="/home">Utility Changes</a>
+                    <a class="dropdown-item" routerLink="/home">Drop Request</a>
+                    <a class="dropdown-item" routerLink="/feeds">Drop List</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Billing</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="/home">Meter Readings</a>
+                    <a class="dropdown-item" routerLink="/home">Usage History</a>
+                    <a class="dropdown-item" routerLink="/home">Invoices</a>
+                    <a class="dropdown-item" routerLink="/home">Payments</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="/home">EnergyBill BIG DATA</a>
+                    <a class="dropdown-item" routerLink="/home">EnergyBill SNAPSHOT</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="/home">Manage</a>
+                    <a class="dropdown-item" routerLink="/home">Cycle</a>
+                  </div>
+                </li>
+                
+              </ul> -->
+              <!--  -->
+              <ul class="navbar-nav mt-2 mt-lg-0" style="margin-left: 94px;" >
+                <li class="nav-item active">
+                  <a class="nav-link " routerLink="/Notification" (click)="isShown = false" >
+                    <img src="https://webvictory.in/img/alert_enersys.png" class="alert-icon">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/online_help" (click)="isShown = false" >?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " routerLink="/login" (click)="isShown = false" >Username</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>

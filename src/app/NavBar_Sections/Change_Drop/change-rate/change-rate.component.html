@@ -1,0 +1,141 @@
+<div >
+  <app-enersysheader></app-enersysheader>
+  <app-enersynavebar></app-enersynavebar>
+</div>
+
+<div class="container" style="padding-top:30px;margin-top: 45px;margin-left: 30px;">
+  <div class="row">
+    <div class="col-lg-3 ">
+      <h2 class="section_heading">Change Request</h2>
+      <div class="nav_set">
+          <app-enersys-sidebar></app-enersys-sidebar>
+      </div>
+    </div>
+    <div class ="col-lg-9">
+      <div class="row">
+          <div class="col-lg-6" style="padding-top: 81px;padding-left: 122px;">
+              <img class="energbill_snapshot" src="https://webvictory.in/img/EnergyBillSnapShot_enersys.png">
+          </div>
+          <div class="col-lg-6">
+              <div>
+                      <div #referenceKeyName  id="chart0"></div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="table-bordered search-box">
+              
+            <div class="col-2 pull-l enroll-search-title" style="max-width: 11.666667%;padding-right:0px;padding-left:0px;">
+                <label class="request-type-label request-type-title">Utility Id:</label>
+            </div>
+            <div class="col-10 pull-l" style="width:19%; margin-left: 10px;">
+              <form [formGroup]="AccountSearchForm" (ngSubmit)="onSubmitAccountSearchForm()" action="javascript:;">
+                <div class="form-group">
+                  <div class="input-group" style="margin-left: 0px;bottom: 3px;">
+                    <select class="col-4 form-control input_box form-col"  formControlName="utility_type"  style="height: 33px;min-width: 200px;">
+                      <option value=""  selected="selected">select</option>
+                      <option value="Consolidated Edison Company Of New York Inc.">Consolidated Edison Company Of New York Inc.</option>
+                      <option value="Long Island Power Authority">Long Island Power Authority</option>
+                    </select>
+                    
+                      <div class="col-4 pull-l enroll-search-title" style="width: 123px;left: 128px;">
+                          <label class="request-type-label request-type-title">Rate Plans:</label>
+                      </div>
+                      <select class="col-4 form-control input_box form-col "  formControlName="plan_type" style="height: 33px;left: 131px;min-width: 200px;" >
+                          <option value=""  selected="selected">select</option>
+                          <option value="Gold Plan">Gold Plan</option>
+                          <option value="Silver Plan">Silver Plan</option>
+                          <option value="Platinum">Platinum</option>
+                      </select>
+                    <span class="input-group-btn" style="left: 49px;">
+                      <button class="btn btn-default" style="color: black; background-color: #6cbbd1;border-radius: 17px;width: 85px;">Search</button>
+                    </span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="isDateFound">
+          <div class="col-lg-12" style="padding-top: 10px;">
+            <div class="table-bordered search-box">
+                
+              <div class="col-2 pull-l enroll-search-title" style="max-width: 11.666667%;padding-right:0px;padding-left:0px;">
+                  <label class="request-type-label request-type-title">Billing Method:</label>
+              </div>
+              <div class="col-10 pull-l" style="width:19%; margin-left: 10px;">
+                <form [formGroup]="AccountUpdateForm" (ngSubmit)="onSubmitAccountUpdateForm()" action="javascript:;">
+                  <div class="form-group">
+                    <div class="input-group" style="margin-left: 0px;bottom: 3px;">
+                      <select class="col-4 form-control input_box form-col"  formControlName="billing_method"  style="height: 33px;min-width: 200px;">
+                        <option value=""  selected="selected">select</option>
+                        <option value="UBR">UBR</option>
+                        <option value="Dual">Dual</option>
+                      </select>
+                      
+                        <div class="col-4 pull-l enroll-search-title" style="    width: 192px;left: 55px;">
+                            <label class="request-type-label request-type-title">Change Rate Plans To:</label>
+                        </div>
+                        <select class="col-4 form-control input_box form-col "  formControlName="changedPlan_type" style="height: 33px;left: 64px;min-width: 200px;" >
+                            <option value=""  selected="selected">select</option>
+                            <option value="Gold Plan">Gold Plan</option>
+                            <option value="Silver Plan">Silver Plan</option>
+                            <option value="Platinum">Platinum</option>
+                        </select>
+                      <span class="input-group-btn" style="left: 49px;">
+                        <button class="btn btn-default" style="color: black; background-color: #6cbbd1;border-radius: 17px;width: 85px;">Change</button>
+                      </span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="row"style="margin-left: 1px;padding-top: 20px;width: 1002px;">
+      <form [formGroup]="myForm">
+        <table class="table table-condensed table-striped table-hover">
+            <thead class="table-heading">
+                <tr>
+                  <th>Select</th>
+                    <th style="width: 115px;">Account No.</th>
+                    <th style="width: 185px;">Account Name #</th>
+                    <th style="width: 105px;">Plan #</th>
+                    <th style="width: 368px;">Utility</th>
+                    <th >Bill Method</th>
+                    
+                </tr>
+            </thead>
+            <tbody class="td-body-color">
+              <tr *ngFor="let enrollement of enrollementSearched">
+                <td > 
+                    <input type="checkbox" (change)="onChange(enrollement.userId, $event.target.checked)">
+                </td>
+                <td > 
+                    {{enrollement.userId}}
+                </td>
+                <td > 
+                    {{enrollement.firstName}} {{enrollement.lastName}}
+                </td>
+                <td > 
+                    {{enrollement.plan_type}}
+                </td>
+                <td > 
+                    {{enrollement.Utility}}
+                </td>
+                <td > 
+                    {{enrollement.months}}
+                </td>
+               
+              </tr>
+               
+              </tbody>
+        </table>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+    

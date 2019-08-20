@@ -1,0 +1,74 @@
+
+
+ 
+  <!-- Services Section Start -->
+<div  class="section">
+  <div class="container">
+    <div class="section-header">          
+      <h2 class="section-title">RSS Feeds</h2>
+      <span>Quotes</span>
+      <p class="section-subtitle">The World Of Best Quotes</p>
+    </div>
+    
+    <div *ngIf="subscribe" class="row">
+      <form [formGroup]="subscrbeForm" (ngSubmit)="onSubmitsubscribe()">
+        <div class="form-group">
+        <div class="input-group" style="margin-left: 234px;">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" formControlName="email" id="email">
+            <span class="input-group-btn">
+                <button class="btn btn-default" style="padding-top: 10px;margin-top: 20px;margin-left: 56px;color: black">subscribe</button>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="addfeed" class="row">
+      <div class="col-12">
+        <form [formGroup]="subscrbeForm" (ngSubmit)="onSubmitfeed()">
+          <div class="form-group" >
+            <div class="col-4">
+              <label for="auther_name">Auther Name:</label>
+              <input type="text" class="form-control" formControlName="auther_name" id="auther_name">
+            </div>
+            <div class="col-4">
+              <label for="feed">Feed:</label>
+              <input type="text" class="form-control" formControlName="feed" id="feed">
+            </div>
+              <button class="btn btn-default" style="margin-left: 50px;color: black;">Post</button>
+            </div>
+        </form>
+      </div>
+    </div>
+    <div class="row" *ngIf="btnclicked" style="
+    background-color: #DCDCDC;">
+        <button class="btn btn-default" (click)="subscribe_btn()" style="color: black;margin-left: 364px;margin-top: 15px;margin-bottom: 15px;">Subscribe</button>
+        <button class="btn btn-default" (click)="feed_btn()" style="color: black;margin-left: 170px;margin-top: 15px;margin-bottom: 15px;" >Upload Feeds</button>
+    </div>
+    <div *ngIf="successful_subscribed" class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        You Have Successfully Subscribed the Feeds!!
+    </div>
+    <div *ngIf="failed_subscribed" class="alert alert-success" role="alert">
+        You Have Successfully Subscribed the Feeds!!
+    </div>
+    <div *ngIf="list" class="row">
+      <ul class="col-12 col-sm-12 col-md-12 col-lg-12">
+          <li  *ngFor="let feeds of feedsarray;">
+              <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.2s">
+                  <div class="icon color-1">
+                    <i class="lni-pencil"></i>
+                  </div>
+                  <h4>{{feeds.auther_name}}</h4>
+                  <p>{{feeds.feed}}</p>
+                </div>
+              </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+  
+
+  

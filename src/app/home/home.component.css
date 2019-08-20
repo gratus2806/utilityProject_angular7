@@ -1,0 +1,133 @@
+.body-content {
+    padding: 0 25px;
+}
+/* body {
+   
+    overflow-x: unset;
+} */
+/* .container {
+    margin: 0 auto;
+} */
+.header .col-sm-6 {
+    padding: 30px 0;
+
+}
+.header{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.logo {
+    line-height: 80px;
+    vertical-align: middle;
+}
+
+.mar-top-28 {
+    
+    margin-top: 0px;
+    padding-left: 539px !important;
+
+
+}
+.text-right {
+    text-align: right;
+}
+.text-right .logo img {
+    height: 25px;
+}
+
+
+
+      .Welcome {
+        font-weight: 100;
+        font-size: 30px;
+        padding-left: 10px;
+    }
+    @media screen and (max-width: 1920px){
+        .newsTable > .newsLabel {
+            font-size: 22px;;
+            color: #404040;
+            font-family: 'Heebo', sans-serif !important;
+            /* font-weight: bold; */
+        }
+    }
+    label {
+        /* display: inline-block; */
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 500;
+        align-items: center;
+    }
+
+    .newsTable > label {
+        margin-left: 10px;
+    }
+    .newsTable {
+        background-color: #eeeeee;
+        height: 315px;
+    }
+    
+
+    @media screen and (min-width: 950px){
+        .left-col {
+            width: 25%;
+            float: left;
+        }
+    }
+    .left-col {
+        width: 20%;
+        float: left;
+        min-width: 307px;
+        max-width: 700px;
+        height: 343px;
+    }
+   
+    
+    .newsTable .offset-1 {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 23px;
+        font-weight: 500;
+    }
+    @media screen and (max-width: 1920px){
+        .newsTable .offset-1 {
+            font-size: 18px;
+            font-weight: 200;
+        }
+    }
+    #slides li {
+        width: 100%;
+        height: 100%;
+        float: left;
+        position: relative;
+    }
+    #slides {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 160px;
+        margin-top: 15px;
+    }
+    @media screen and (min-width: 950px){
+        .right-col {
+            width: 75%;
+        }
+    }
+    .right-col {
+        width: 79%;
+        padding-left: 15px;
+        /* float: right; */
+        min-height: 370px;
+        display: inline-block;
+    }
+    .energbill_snapshot {
+        height: 22px;
+        /*  */
+    }
+    .chart{
+    display: block;
+    }
+
+
+
+
+    

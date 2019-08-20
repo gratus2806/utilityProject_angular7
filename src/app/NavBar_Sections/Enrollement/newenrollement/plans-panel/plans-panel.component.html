@@ -1,0 +1,52 @@
+
+<div class="custom-border">
+    <a class="no-bold"  (click)="onSelect(planData) ">
+        <br>
+        <br>
+        <div class="form-group col-md-12 col-sm-12 text-center">
+            <div class="rate-plan-header  ng-binding">
+               {{plans.plan_type}}
+            </div>
+        </div>
+        <div class="form-group col-md-12 col-sm-12 text-center">
+            <div class="rate-plan-unit ng-binding">{{plans.unit_rate}}</div>
+            <div class="rate-plan-units">{{plans.units}}</div>
+        </div>
+        <div class="form-group col-md-12 col-sm-12 text-center padding-top-bottom rate-plan-power">
+            <label class="form-col pad-l-8">{{plans.powerYour_Tomorrow}}</label>
+        </div>
+    </a>
+
+    <div class="rate-plan-background">
+        <a class="no-bold"  (click)="onSelect(planData)">
+            <div class="form-group col-md-12 col-sm-12">
+                <div class="rate-plan-utility">PRODUCT</div>
+                <label class="form-col rate-plan-utility-sub ng-binding">{{plans.months}}</label>
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+                <div class="rate-plan-utility">OFFERS</div>
+                <label class="rate-plan-utility-sub form-col ng-binding"></label>
+                <!-- ngIf: ratePlan.OfferName==null --><label class="rate-plan-utility-sub form-col ng-scope" ng-if="ratePlan.OfferName==null">{{plans.offers}}</label><!-- end ngIf: ratePlan.OfferName==null -->
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+                <div class="rate-plan-utility">GREEN ENERGY</div>
+                <label class="rate-plan-utility-sub form-col">{{plans.green_energy}}</label>
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+                <div class="rate-plan-utility">EARLY TERMINATION FEE</div>
+                <label class="rate-plan-utility-sub form-col ng-binding">{{plans.earlyTermination_fee}}</label>
+            </div>
+        </a>
+        <div class="form-group col-md-12 col-sm-12 ">
+            <a class="no-bold"  (click)="onSelect(planData)">
+                <div class="rate-plan-utility">PLAN DOCS</div>
+            </a>
+            <div class="rate-plan-utility"><a class="no-bold"  (click)="onSelect(planData)"></a><a class="no-underline" style="color: #6CBBD1;">Rate Plan Summary</a></div>
+            <div class="rate-plan-utility"><a class="no-underline" style="color: #6CBBD1;">Terms &amp; Conditions</a></div>
+        </div>
+    </div>
+</div>
+
+<div class ="row">
+    
+</div>

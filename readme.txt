@@ -1,0 +1,12 @@
+--->Start
+--->Create the Angular Project With ng new <project name>
+--->Then generated the subscription component where 
+    ->UI was created and its Component part
+--->Then Service was created which was used for sending and receiving  data to backend
+    ->Here we have created three Services
+        -subscription
+        -loadfeeds
+        -autherFeeds
+    ->We use 'subscription' service to send the Subscription detail of user to nodeServe to save data in DB for later Use.
+    ->We use 'loadfeeds' to get the Feeds initially on pageload to display it on screen,it is declered in onInit Function.
+    ->We use 'autherFeeds' to send the feeds to server to save it in DB and Display it in UI .

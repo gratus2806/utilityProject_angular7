@@ -1,0 +1,248 @@
+<div >
+  <app-enersysheader></app-enersysheader>
+  <app-enersynavebar></app-enersynavebar>
+</div>
+<div class="container" style="padding-top:30px;margin-top: 45px;margin-left: 30px;">
+  <div class="row">
+      <div class="col-lg-3 ">
+        <h2 class="section_heading">New Enrollment</h2>
+        <div class="custom-border">
+          <a class="no-bold"  (click)="onSelect(planData) ">
+              <br>
+              <br>
+              <div class="form-group col-md-12 col-sm-12 text-center">
+                  <div class="rate-plan-header  ng-binding">
+                    {{planData.plan_type}}
+                  </div>
+              </div>
+              <div class="form-group col-md-12 col-sm-12 text-center">
+                  <div class="rate-plan-unit ng-binding">{{planData.unit_rate}}</div>
+                  <div class="rate-plan-units">{{planData.units}}</div>
+              </div>
+              <div class="form-group col-md-12 col-sm-12 text-center padding-top-bottom rate-plan-power">
+                  <label class="form-col pad-l-8">{{planData.powerYour_Tomorrow}}</label>
+              </div>
+          </a>
+          <div class="rate-plan-background">
+              <a class="no-bold"  (click)="onSelect(planData)">
+                  <div class="form-group col-md-12 col-sm-12">
+                      <div class="rate-plan-utility">PRODUCT</div>
+                      <label class="form-col rate-plan-utility-sub ng-binding">{{planData.months}}</label>
+                  </div>
+                  <div class="form-group col-md-12 col-sm-12">
+                      <div class="rate-plan-utility">OFFERS</div>
+                      <label class="rate-plan-utility-sub form-col ng-binding"></label>
+                      <!-- ngIf: ratePlan.OfferName==null --><label class="rate-plan-utility-sub form-col ng-scope" ng-if="ratePlan.OfferName==null">{{planData.offers}}</label><!-- end ngIf: ratePlan.OfferName==null -->
+                  </div>
+                  <div class="form-group col-md-12 col-sm-12">
+                      <div class="rate-plan-utility">GREEN ENERGY</div>
+                      <label class="rate-plan-utility-sub form-col">{{planData.green_energy}}</label>
+                  </div>
+                  <div class="form-group col-md-12 col-sm-12">
+                      <div class="rate-plan-utility">EARLY TERMINATION FEE</div>
+                      <label class="rate-plan-utility-sub form-col ng-binding">{{planData.earlyTermination_fee}}</label>
+                  </div>
+              </a>
+              <div class="form-group col-md-12 col-sm-12 ">
+                  <a class="no-bold"  (click)="onSelect(planData)">
+                      <div class="rate-plan-utility">PLAN DOCS</div>
+                  </a>
+                  <div class="rate-plan-utility"><a class="no-bold"  (click)="onSelect(planData)"></a><a class="no-underline" style="color: #6CBBD1;">Rate Plan Summary</a></div>
+                  <div class="rate-plan-utility"><a class="no-underline" style="color: #6CBBD1;">Terms &amp; Conditions</a></div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class ="col-lg-9">
+        <div class="row">
+          <div class = "col-lg-12">
+            <h3 class="header">Customer Info</h3>
+          </div>
+        </div>
+        <div class="row">
+          <!-- <div class ="col-lg-2">
+              <label >First Name</label>
+          </div>
+          <div class ="col-lg-4">
+
+          </div> -->
+          <div class="col-10 pull-l" style="width:19%; margin-left: 10px;">
+              <form [formGroup]="newEnrollementForm" (ngSubmit)="onSubmitEnrollementForm()">
+                  <div class="form-group">
+                      <div class="input-group" style="margin-left: 0px;bottom: 3px;">
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-2">
+                            <label class="label_position">First Name</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box" formControlName="firstName">
+                          <div class="col-2 label2_position">
+                            <label class=" label_position ">Last Name</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box input_box2" formControlName="lastName" >
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-2">
+                            <label class="label_position">Email</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box" formControlName="email">
+                          <div class="col-2 label2_position">
+                            <label class=" label_position ">Phone #</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box input_box2" formControlName="phoneNo" >
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-2">
+                            <label class="label_position">Social Security #</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box" formControlName="socialSecurity">
+                          <div class="col-2 label2_position">
+                            <label class=" label_position ">Mobile #</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box input_box2" formControlName="mobileNo" >
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-2">
+                            <label class="label_position">DOB</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box" formControlName="Date_birth">
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-12">
+                            <label>
+                              <div class ="row">
+                                <input class="col-1" type="checkbox" value="authorized" formControlName="authorized">
+                                <div class="col-11" style="width: 797px;">
+                                  <span>I authorize Energy marketer to conduct a soft credit check. This credit check will not affect your credit score and will be used to determine if a deposit is required before starting service.</span>
+                                </div>
+                              </div>
+                            </label>
+                            <div class="row">
+                                <div class="col-md-12 mar-top-20 in-color margin-l-27">
+                                    <label>Above info may be used to verify your account information if you call customer support</label>
+                                </div>
+                            </div>
+                          </div>
+                          <!-- <input type="text" class="col-4 form-control input_box" formControlName="Date_birth"> -->
+                        </div>
+                        <div class="row">
+                          <div class = "col-lg-12">
+                            <h3 class="header">Service Address</h3>
+                          </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-2">
+                            <label class="label_position">Address</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box" formControlName="address">
+                          <div class="col-2 label2_position">
+                            <label class=" label_position ">State</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box input_box2" formControlName="state" >
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-2">
+                            <label class="label_position">Address 2</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box" formControlName="address_2">
+                          <div class="col-2 label2_position">
+                            <label class=" label_position ">ZIP</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box input_box2" formControlName="zip_code" >
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-2">
+                            <label class="label_position">City</label>
+                          </div>
+                          <input type="text" class="col-4 form-control input_box" formControlName="city">
+                          <div class="col-6 label2_position" style="top: -10;bottom: 14px;">
+                              <label>
+                                  <div class ="row">
+                                    <input class="col-1" type="checkbox" value="samebillingAddress" formControlName="samebillingAddress">
+                                    <div class="col-11" style="width: 797px;padding-left: 0px;">
+                                      <span style="margin-left: 36px;">billing address same as service address.</span>
+                                    </div>
+                                  </div>
+                                </label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class = "col-lg-12">
+                            <h3 class="header">Utility Acct Info</h3>
+                          </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-2">
+                            <label class="label_position">Utility Info</label>
+                          </div>
+                          <select   class="col-3 form-control input_box  " name="Utility_lists" formControlName="Utility" style="    height: 33px;">
+                              <!-- <option value="selected"  selected="selected">select</option>  -->
+                              <option *ngFor="let Utility_lists of Utility_listArray" [ngValue]="Utility_lists.Utility_list">
+                                  {{ Utility_lists.Utility_list}}
+                                </option>
+                          </select>
+                          <div class="col-2">
+                            <label class="label_position">Comodity Info</label>
+                          </div>
+                          <select class="col-3 form-control input_box  " formControlName="Commodity" style="    height: 33px;">
+                              <!-- <option value="selected"  selected="selected">select</option> -->
+                               <option *ngFor="let CommodityLists of CommodityListArray" [ngValue]="CommodityLists.CommodityList">
+                                   {{ CommodityLists.CommodityList}}
+                                 </option>
+                           </select>
+                          <!-- <input type="text" class="col-4 form-control input_box" formControlName="accountInfo"> -->
+                        </div>
+                        <div class="row">
+                          <div class = "col-lg-12">
+                            <h3 class="header">Authorizations</h3>
+                          </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-12">
+                            <label>
+                              <div class ="row">
+                                <input class="col-1" type="checkbox" value="authorizedContacting" formControlName="authorizedContacting">
+                                <div class="col-11" style="width: 797px;">
+                                  <span> I allow Energy marketer and its contractors or affiliates to contact me using email address, text or phone number I provided in this enrollment. Contacts by Energy marketer may be made using automatic dialers, text messaging, or prerecorded messages. I understand that I am responsible for any charges by my cellular phone carrier that may result from such contacts. I understand that I can revoke this consent at any time.</span>
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-12">
+                            <label>
+                              <div class ="row">
+                                <input class="col-1" type="checkbox" value="ageAuthorized" formControlName="ageAuthorized">
+                                <div class="col-11" style="width: 797px;">
+                                  <span> Yes, I am authorized to make changes on this account and I am at least 18 years of age.</span>
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                          <div class="col-12">
+                            <label>
+                              <div class ="row">
+                                <input class="col-1" type="checkbox" value="VerifiedChanges" formControlName="VerifiedChanges">
+                                <div class="col-11" style="width: 797px;">
+                                  <span> I verify that all information is correct, and that I have authorization to change this account. I understand that electronic acceptance of the sales agreement and Terms of Service is an agreement to initiate service and begin enrollment.</span>
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class ="row">
+                          <span class="input-group-btn"style="padding-top: 42px;">
+                            <a class="btn btn-default " (click)='onCancel()' style="border-radius: 17px;width: 123px;;margin-right: 12px;color: #7f7f7f; background-color: #fefcfc;border: 1.5px solid #bfbfbf;left: 648px;">Cancel</a>
+                              <button class="btn btn-default" style="color: black; background-color: #6cbbd1;border-radius: 17px;width: 123px;left: 660px;">Submit</button>
+                          </span>
+                        </div>
+                      </div>
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

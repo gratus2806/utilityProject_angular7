@@ -1,0 +1,36 @@
+.body-content {
+    padding: 0 25px;
+}
+/* body {
+   
+    overflow-x: unset;
+} */
+/* .container {
+    margin: 0 auto;
+} */
+.header .col-sm-6 {
+    padding: 30px 0;
+
+}
+.header{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.logo {
+    line-height: 80px;
+    vertical-align: middle;
+}
+
+.mar-top-28 {
+    
+    margin-top: 0px;
+    padding-left: 539px !important;
+
+
+}
+.text-right {
+    text-align: right;
+}
+.text-right .logo img {
+    height: 25px;
+}

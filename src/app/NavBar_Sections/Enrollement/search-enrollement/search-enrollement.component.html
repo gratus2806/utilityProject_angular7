@@ -1,0 +1,165 @@
+<div >
+  <app-enersysheader></app-enersysheader>
+  <app-enersynavebar></app-enersynavebar>
+</div>
+<div class="container" style="padding-top:30px;margin-top: 45px;margin-left: 30px;">
+  <div class="row">
+    <div class="col-lg-3 ">
+      <h2 class="section_heading">Search Enrollement</h2>
+      <div class="nav_set">
+          <app-enersys-sidebar></app-enersys-sidebar>
+      </div>
+    </div>
+    <div class ="col-lg-9">
+        <div class="row">
+            <div class="col-lg-6" style="padding-top: 81px;padding-left: 122px;">
+                <img class="energbill_snapshot" src="https://webvictory.in/img/EnergyBillSnapShot_enersys.png">
+            </div>
+            <div class="col-lg-6">
+                <div>
+                        <div #referenceKeyName  id="chart0"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-bordered search-box">
+              <div class="col-2 pull-l enroll-search-title" style="max-width: 11.666667%;padding-right:0px;padding-left:0px;">
+                  <label class="request-type-label request-type-title">Search By:</label>
+              </div>
+              <div class="col-10 pull-l" style="width:19%; margin-left: 10px;">
+                  <form [formGroup]="SearchEnrollementForm" (ngSubmit)="onSubmitSearchEnrollementForm()" action="javascript:;">
+                      <div class="form-group">
+                          <div class="input-group" style="margin-left: 0px;bottom: 3px;">
+                              <select class="col-3 form-control input_box form-col"  formControlName="searchBy" (change)="selectInput($event)" style="height: 33px;">
+                                  <option value=""  selected="selected">select</option>
+                                  <option value="Account Name">Account Name</option>
+                                  <option value="Rate Plan">Rate Plan</option>
+                                  <option value="Promo Code">Promo Code</option>
+                                  <option value="Enrollment Date">Enrollment Date</option>
+                                  <option value="Utility">Utility</option>
+                                  <option value="Commodity">Commodity</option>
+                                  <option value="Account Number">Account Number</option>
+                              </select>
+                              <div *ngIf="isAccountNameSelected">
+                                <div class="col-2 pull-l enroll-search-title" style="width: 90px;">
+                                    <label class="request-type-label request-type-title">First:</label>
+                                </div>
+                                <input type="text" class="col-3 form-control input_box form-col" placeholder="Firstname" formControlName="account_firstName" id="account_firstName" >
+                                <div class="col-2 pull-l enroll-search-title">
+                                    <label class="request-type-label request-type-title">Last:</label>
+                                </div>
+                                <input type="text" class="col-3 form-control input_box form-col" placeholder="Lastname" formControlName="account_lastName" id="account_lastName" >
+                              </div>
+                              <div *ngIf="isRatePlanSelected">
+                                <div class="col-2 pull-l enroll-search-title" style="width: 116px;">
+                                    <label class="request-type-label request-type-title">Rate Plan:</label>
+                                </div>
+                                <select class="col-3 form-control input_box form-col "  formControlName="rate_plan" style="height: 33px;" >
+                                    <option value=""  selected="selected">select</option>
+                                    <option value="Gold Plan">GOLD</option>
+                                    <option value="Platinum">Platinum</option>
+                                    <option value="Platinum">Platinum</option>
+                                    <option value="Platinum">Platinum</option>
+                                    <option value="Platinum">Platinum</option>
+                                    <option value="Platinum">Platinum</option>
+                                </select>
+                              </div>
+                              <div *ngIf="isPromoCodeSelected">
+                                  <div class="col-4 pull-l enroll-search-title" style="width: 140px;">
+                                      <label class="request-type-label request-type-title">Promo Code:</label>
+                                  </div>
+                                  <input type="text" class="col-3 form-control input_box form-col" formControlName="promo_code" id="promo_code" >
+                                </div>
+                              <div *ngIf="isEnrollmentDateSelected">
+                                <div class="col-4 pull-l enroll-search-title" style="width:163px;">
+                                    <label class="request-type-label request-type-title">Enrollment Date :</label>
+                                </div>
+                                <input type="text" class="col-3 form-control datepicker input_box form-col" placeholder="dd-mm-yyyy"  formControlName="enrollement_date"  >
+                              </div>
+                              <div *ngIf="isUtilitySelected">
+                                  <div class="col-2 pull-l enroll-search-title" style="width: 116px;">
+                                      <label class="request-type-label request-type-title">Utility:</label>
+                                  </div>
+                                  <select class="col-3 form-control input_box form-col "  formControlName="utility_name" style="height: 33px;" >
+                                      <option value=""  selected="selected">select</option>
+                                      <option value="Consolidated Edison Company Of New York Inc.">Consolidated Edison Company Of New York Inc.</option>
+                                      <option value="Public Service Elec & Gas Co">Public Service Elec & Gas Co</option>
+                                      <option value="Central Hudson Gas & Electric">Central Hudson Gas & Electric</option>
+                                      <option value="Long Island Power Authority">Long Island Power Authority</option>
+                                  </select>
+                              </div>
+                              <div *ngIf="isCommoditySelected">
+                                  <div class="col-2 pull-l enroll-search-title" style="width: 116px;">
+                                      <label class="request-type-label request-type-title">Commodity:</label>
+                                  </div>
+                                  <select class="col-3 form-control input_box form-col "  formControlName="commodity_name" style="height: 33px;" >
+                                      <option value=""  selected="selected">select</option>
+                                      <option value="Electric  ">Electric  </option>
+                                      <option value="Gas">Gas</option>
+                                  </select>
+                                </div>
+                                <div *ngIf="isAccountNumberSelected">
+                                    <div class="col-4 pull-l enroll-search-title" style="width: 140px;">
+                                        <label class="request-type-label request-type-title">AC. Number:</label>
+                                    </div>
+                                    <input type="text" class="col-3 form-control input_box form-col" formControlName="account_no"  >
+                                  </div> 
+
+                               
+                              <span class="input-group-btn" style="left: 49px;">
+
+                                <button class="btn btn-default" style="color: black; background-color: #6cbbd1;border-radius: 17px;width: 85px;">Search</button>
+                              </span>
+                            </div>
+                      </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row"style="margin-left: 1px;padding-top: 20px;width: 1002px;">
+          <table class="table table-condensed table-striped table-hover">
+              <thead class="table-heading">
+                  <tr>
+                      <th>Acc No.</th>
+                      <th>Account Name</th>
+                      <th>Rate Plan</th>
+                      <th>Utility </th>
+                      <th>Comodity</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                  </tr>
+              </thead>
+              <tbody class="td-body-color">
+                <tr *ngFor="let enrollement of enrollementSearched">
+                  <td > 
+                      {{enrollement.userId}}
+                  </td>
+                  <td > 
+                      {{enrollement.firstName}} {{enrollement.lastName}}
+                  </td>
+                  <td > 
+                      {{enrollement.plan_type}}
+                  </td>
+                  <td > 
+                      {{enrollement.Utility}}
+                  </td>
+                  <td > 
+                      {{enrollement.Commodity}}
+                  </td>
+                  <td > 
+                      20/08/2019
+                  </td>
+                  <td > 
+                      Pending
+                  </td>
+                </tr>
+                </tbody>
+          </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+        

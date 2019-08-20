@@ -1,0 +1,165 @@
+<div >
+  <app-enersysheader></app-enersysheader>
+  <app-enersynavebar></app-enersynavebar>
+</div>
+<div class="container" style="padding-top:30px;margin-top: 45px;margin-left: 30px;">
+  <div class="row">
+    <div class="col-lg-3 ">
+      <h2 class="section_heading">Change Request</h2>
+      <div class="nav_set">
+          <app-enersys-sidebar></app-enersys-sidebar>
+      </div>
+    </div>
+    <div class ="col-lg-9">
+      <div class="row">
+          <div class="col-lg-6" style="padding-top: 81px;padding-left: 122px;">
+              <img class="energbill_snapshot" src="https://webvictory.in/img/EnergyBillSnapShot_enersys.png">
+          </div>
+          <div class="col-lg-6">
+              <div>
+                      <div #referenceKeyName  id="chart0"></div>
+              </div>
+          </div>
+
+      </div>
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="table-bordered search-box">
+                  
+                      <div class="col-2 pull-l enroll-search-title" style="max-width: 11.666667%;padding-right:0px;padding-left:0px;">
+                          <label class="request-type-label request-type-title">Search By:</label>
+                      </div>
+                      <div class="col-10 pull-l" style="width:19%; margin-left: 10px;">
+                          <form [formGroup]="AccountSearchForm" (ngSubmit)="onSubmitAccountSearchForm()" action="javascript:;">
+                              <div class="form-group">
+                                  <div class="input-group" style="margin-left: 0px;bottom: 3px;">
+                                      <select class="col-3 form-control input_box form-col"  formControlName="searchBy" (change)="selectInput($event)" style="height: 33px;">
+                                          <option value=""  selected="selected">select</option>
+                                          <option value="Account">Account</option>
+                                          <option value="Utility + Status">Utility + Status</option>
+                                          <option value="Account Name">Account Name</option>
+                                          <option value="Number">Number</option>
+                                          <option value="Address">Address</option>
+                                      </select>
+                                      <div *ngIf="isUtilitySelected">
+                                        <div class="col-2 pull-l enroll-search-title" style="width: 73px;">
+                                            <label class="request-type-label request-type-title">Utility:</label>
+                                        </div>
+                                        <select class="col-3 form-control input_box form-col "  formControlName="utility_type" style="height: 33px;" >
+                                            <option value=""  selected="selected">select</option>
+                                            <option value="Consolidated Edison Company Of New York Inc.">Consolidated Edison Company Of New York Inc.</option>
+                                            <option value="Long Island Power Authority">Long Island Power Authority</option>
+                                        </select>
+                                        <div class="col-2 pull-l enroll-search-title">
+                                            <label class="request-type-label request-type-title">Status:</label>
+                                        </div>
+                                        <select class="col-3 form-control input_box form-col "  formControlName="status" style="height: 33px;" >
+                                            <option value=""  selected="selected">select</option>
+                                            <option value="Accepted">Accepted</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Rejecteds">Rejected</option>
+                                        </select>
+
+                                      </div>
+                                      <div *ngIf="isAccountSelected">
+                                          <div class="col-2 pull-l enroll-search-title" style="width: 90px;">
+                                              <label class="request-type-label request-type-title">Number:</label>
+                                          </div>
+                                          <input type="text" class="col-3 form-control input_box form-col" formControlName="account_Number" id="account_Number" >
+                                          <div class="col-2 pull-l enroll-search-title">
+                                              <label class="request-type-label request-type-title">Type:</label>
+                                          </div>
+                                          <select class="col-3 form-control input_box form-col "  formControlName="account_Type" style="height: 33px;" >
+                                              <option value=""  selected="selected">select</option>
+                                              <option value="UAN">UAN</option>
+                                              <option value="MAN">MAN</option>
+                                              <option value="MN">MN</option>
+                                          </select>
+                                        </div>
+                                        <div *ngIf="isAccountNameSelected">
+                                          <div class="col-2 pull-l enroll-search-title" style="width: 90px;">
+                                              <label class="request-type-label request-type-title">Name:</label>
+                                          </div>
+                                          <input type="text" class="col-3 form-control input_box form-col" placeholder="firstname-lastname" formControlName="account_Name" id="account_Name" >
+                                          <div class="col-2 pull-l enroll-search-title">
+                                              <label class="request-type-label request-type-title">Company:</label>
+                                          </div>
+                                          <input type="text" class="col-3 form-control input_box form-col" placeholder="If any..." formControlName="company_Name" id="company_Name" >
+                                        </div>
+                                        <div *ngIf="isNumberSelected">
+                                          <div class="col-2 pull-l enroll-search-title" style="width: 90px;">
+                                              <label class="request-type-label request-type-title">Type:</label>
+                                          </div>
+                                          <select class="col-3 form-control input_box form-col "  formControlName="number_Type" style="height: 33px;" >
+                                              <option value=""  selected="selected">select</option>
+                                              <option value="Phone">Phone</option>
+                                              <option value="Mobile">Mobile</option>
+                                          </select>
+                                          <div class="col-2 pull-l enroll-search-title">
+                                              <label class="request-type-label request-type-title">Number:</label>
+                                          </div>
+                                          <input type="text" class="col-3 form-control input_box form-col"  formControlName="phone_Number" id="phone_Number" >
+                                        </div>
+                                        <div *ngIf="isAddressSelected">
+                                            <div class="col-2 pull-l enroll-search-title" style="width: 90px;">
+                                                <label class="request-type-label request-type-title ">Type:</label>
+                                            </div>
+                                            <select class="col-3 form-control input_box form-col "  formControlName="address_Type" style="height: 33px;" >
+                                                <option value=""  selected="selected">select</option>
+                                                <option value="billing_Address">billing_Address</option>
+                                                <option value="buisness_Address">buisness_Address</option>
+                                            </select>
+                                            <div class="col-2 pull-l enroll-search-title">
+                                                <label class="request-type-label request-type-title">Address:</label>
+                                            </div>
+                                            <input type="text" class="col-3 form-control input_box form-col"  formControlName="address" id="address" >
+                                          </div>
+                                      <span class="input-group-btn" style="left: 49px;">
+                                        <button class="btn btn-default" style="color: black; background-color: #6cbbd1;border-radius: 17px;width: 85px;">Search</button>
+                                      </span>
+                                    </div>
+                              </div>
+                          </form>
+                      </div>
+                  
+              </div>
+          </div>
+      </div>
+      <div class="row"style="margin-left: 1px;padding-top: 20px;width: 1002px;">
+          <table class="table table-condensed table-striped table-hover">
+              <thead class="table-heading">
+                  <tr>
+                      <th>Marketer Acct</th>
+                      <th>Acct #</th>
+                      <th>Meter #</th>
+                      <th>Utility</th>
+                      <th>Bill Method</th>
+                      
+                  </tr>
+              </thead>
+              <tbody class="td-body-color">
+                <tr >
+                  <td > 
+                     121213
+                  </td>
+                  <td > 
+                     dhsha absdb
+                  </td>
+                  <td > 
+                     123@
+                  </td>
+                  <td > 
+                     Consolidated Edison Company Of New York Inc.
+                  </td>
+                  <td > 
+                     qwerty
+                  </td>
+                 
+                </tr>
+                </tbody>
+          </table>
+      </div>
+  </div>
+  </div>
+</div>
+    

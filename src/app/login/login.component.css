@@ -1,0 +1,50 @@
+
+
+
+.backgrd{
+    /* background-image: url("https://webvictory.in/img/cloud.png"); */
+    width: 100%;
+    height: 100%;
+    background: url("https://webvictory.in/img/cloud.png") no-repeat center;
+    background-size: 100% 100%;
+    background-position: top center;
+}
+.login {
+    text-align: center;
+    margin-top: 110px; 
+    margin-bottom: 125px;
+}
+
+.input_pos{
+    margin-left: 509px !important;
+    margin-right: 190px !important;
+}
+.pass_pos{
+    margin-left: 511px !important;
+    margin-top: 18px !important;
+}
+.login .logo {
+    max-width: 320px;
+}
+.login .cis {
+    max-width: 215px;
+    width: 75%;
+    margin: 85px auto 25px;
+}
+.large-text {
+    min-height: 35px;
+    margin: 0 auto;
+    max-width: 320px;
+   
+}
+.large-text input:-webkit-autofill {
+    background-color: #c0deec !important;
+    border: 1px solid #fff !important;
+}
+#loginForm input {
+     padding: 3px 40px 3px 12px;
+     
+}
+.displayNone {
+    display: none;
+}

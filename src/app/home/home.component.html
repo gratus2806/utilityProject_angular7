@@ -1,0 +1,79 @@
+<div class="enersys_header">
+  <app-enersysheader></app-enersysheader>
+  <app-enersynavebar></app-enersynavebar>
+</div>
+<div class="container body-content" style="padding-top:30px;margin-left: 0px;margin-right: 0px;">
+    <div class="col-md-12" style="margin-bottom:15px;">
+      <!-- <div class="col-md-3" style="padding-top: 19px;">
+        <label class="Welcome" style="padding-left:0px;margin-bottom:30px;">Welcome </label>
+      </div> -->
+     
+      <!-- <div coll="col-md-6">
+        
+         
+      </div> -->
+    </div>
+    
+    <div class="col-md-12">
+      <div class="col-md-3">
+          <app-enersys-sidebar></app-enersys-sidebar>
+      </div>
+      <div class="col-md-9">
+          <div class="col-md-3" style="padding-top: 34px;">
+              <img class="energbill_snapshot" src="https://webvictory.in/img/EnergyBillSnapShot_enersys.png">
+          </div>
+          <div class="col-md-3" style="margin-left: 71px;margin-right: 24px;">
+              <div class="card" style="height: 128px;width: 308px;border-radius: 20px;">
+                  <div class="left-col newsTable" style=" border-radius: 20px;">
+                      <label class="newsLabel" style="margin-left: 111px;">NEWS</label>
+                      <br>
+                      <ngb-carousel >
+                          <ng-template ngbSlide *ngFor="let news of news; let k = index">
+                              <h3 style="padding-left: 14px;font-size: 19px;font-weight: 1;color: #47b8f1;">{{news.newsName}}</h3>
+                          </ng-template>
+                          <!-- <ng-template ngbSlide>
+                              <h3 style="font-size: 21px;font-weight:1;color: #47b8f1;">Enersys signs on 10 key new EDI</h3>
+                          </ng-template> -->
+                        </ngb-carousel>
+                  </div>
+                  
+              </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="card" style="height: 128px;width: 309px;margin-left: 116px;border-radius: 20px;">
+                    <div class="left-col newsTable"style=" border-radius: 20px;">
+                        <label class="newsLabel" style="margin-left: 111px;">Time</label>
+                        <br>
+                        <label class="offset-1"style="padding-left: 84px;;font-size: 19px;font-weight: 1;color: #47b8f1;"> 1:17 AM</label>
+                        <br>
+                        <label class="offset-1"style="padding-left: 55px;font-size: 19px;font-weight: 1;color: #47b8f1;">Saturday July 27</label>
+                    </div>
+                    
+                </div>
+            </div>
+          <div class="right-col" style="width: 802px;padding-left: 2px;">
+            <div class="row" style="    height: 285px;">
+                <div class="col-md-4" >
+                    <div #referenceKeyName  id="chart0"></div>
+                  </div>
+                  <div class="col-md-4" style="left: 70px;">
+                    <div #referenceKeyName  id="chart1"></div>
+                  </div>
+                  <div class="col-md-4" style="left: 133px;">
+                    <div #referenceKeyName  id="chart2"></div>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" >
+                    <div #referenceKeyName  id="chart3"></div>
+                  </div>
+                  <div class="col-md-6" style="left: 70px;">
+                    <div #referenceKeyName  id="chart4"></div>
+                  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+<div class = "enersys_footer"></div>
+
